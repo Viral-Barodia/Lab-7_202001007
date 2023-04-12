@@ -129,3 +129,62 @@ Input: v = 5, a[] = {5}                                                 Output: 
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+Program 3
+
+Code:
+
+int binarySearch(int v, int a[])
+{
+int lo,mid,hi;
+lo = 0;
+hi = a.length-1;
+while (lo <= hi)
+{
+mid = (lo+hi)/2;
+if (v == a[mid])
+return (mid);
+else if (v < a[mid])
+hi = mid-1;
+else
+lo = mid+1;
+
+}
+return(-1);
+}
+
+1. Equivalence Partitioning:
+
+Test case where the value v is not present in the array a[].
+Input: v = 5, a[] = {1, 2, 3, 4, 6, 7, 8, 9}                                 Output: -1
+
+Test case where the value v is present at the beginning of the array a[].
+Input: v = 1, a[] = {1, 2, 3, 4, 6, 7, 8, 9}                                 Output: 0
+
+2. Boundary Values:
+
+Test case with minimum input values.
+Input: v = 5, a[] = {}                                                       Output: -1
+
+Test case where the array has only one element, and it is equal to v.
+Input: v = 5, a[] = {5}                                                      Output: 0
+
+--------------------------------------------------------------------------------------------------------------------
+
+Program 4
+
+Code:
+final int EQUILATERAL = 0;
+final int ISOSCELES = 1;
+final int SCALENE = 2;
+final int INVALID = 3;
+int triangle(int a, int b, int c)
+{
+if (a >= b+c || b >= a+c || c >= a+b)
+return(INVALID);
+if (a == b && b == c)
+return(EQUILATERAL);
+if (a == b || a == c || b == c)
+return(ISOSCELES);
+return(SCALENE);
+
+}
