@@ -1,3 +1,5 @@
+### Problem 0
+
 JAVA Program for determinding previous date:
 
 import java.time.LocalDate;
@@ -44,7 +46,7 @@ Boundary Value Analysis
 
 -----------------------------------------------------------------------------------------------------------------------
 
-Program 1
+### Program 1
 
 Code:
 
@@ -91,7 +93,7 @@ b) v is not found in the array
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Program 2
+### Program 2
 
 Code:
 int countItem(int v, int a[])
@@ -129,7 +131,7 @@ Input: v = 5, a[] = {5}                                                 Output: 
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-Program 3
+### Program 3
 
 Code:
 
@@ -170,7 +172,7 @@ Input: v = 5, a[] = {5}                                                      Out
 
 --------------------------------------------------------------------------------------------------------------------
 
-Program 4
+### Program 4
 
 Code:
 final int EQUILATERAL = 0;
@@ -207,7 +209,7 @@ Input: a = 1, b = 1, c = 3                                                      
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-Program 5
+### Program 5
 Code:
 public static boolean prefix(String s1, String s2)
 {
@@ -228,19 +230,93 @@ return true;
 1. Equivalence Partitioning:
 
 Test case where s1 is a prefix of s2.
-Input: s1 = "abc", s2 = "abcdef"
-Output: true
+Input: s1 = "abc", s2 = "abcdef"                                                     Output: true
 
 Test case where s1 is not a prefix of s2.
-Input: s1 = "abc", s2 = "defgh"
-Output: false
+Input: s1 = "abc", s2 = "defgh"                                                      Output: false
 
 2. Boundary Values:
 
 Test case where s1 is equal to s2.
-Input: s1 = "hello", s2 = "hello"
-Output: true
+Input: s1 = "hello", s2 = "hello"                                                   Output: true
 
 Test case where s1 is one character shorter than s2.
-Input: s1 = "hi", s2 = "hello"
-Output: false
+Input: s1 = "hi", s2 = "hello"                                                      Output: false
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Program 6
+
+Consider again the triangle classification program (P4) with a slightly different specification: <br>
+The program reads floating values from the standard input. The three values A, B, and C are interpreted as representing the lengths of the sides of a triangle. <br>
+The program then prints a message to the standard output that states whether the triangle, if it can be formed, is scalene, isosceles, equilateral, or right angled.<br>
+Determine the following for the above program:<br>
+<br>
+
+**a) Identify the equivalence classes for the system<br>**
+
+Equivalence Classes:<br>
+EC1: All sides are positive, real numbers.<br>
+EC2: One or more sides are negative or zero.<br>
+EC3: The sum of the lengths of any two sides is less than or equal to the length of the remaining side (impossible lengths).<br>
+EC4: The sum of the lengths of any two sides is greater than the length of the remaining side (possible lengths).<br>
+
+<br>
+
+
+**b) Identify test cases to cover the identified equivalence classes. Also, explicitly mention which test case would cover which equivalence class.<br>**
+(Hint: you must need to be ensure that the identified set of test cases cover all identified equivalence classes)<br>
+
+Test cases:<br>
+TC1 (EC1): A=3, B=4, C=5 (right-angled triangle)<br>
+TC2 (EC1): A=5, B=5, C=5 (equilateral triangle)<br>
+TC3 (EC1): A=5, B=6, C=7 (scalene triangle)<br>
+TC4 (EC1): A=5, B=5, C=7 (isosceles triangle)<br>
+TC5 (EC2): A=-2, B=4, C=5 (invalid input)<br>
+TC6 (EC2): A=0, B=4, C=5 (invalid input)<br>
+
+<br>
+
+
+**c) For the boundary condition A + B > C case (scalene triangle), identify test cases to verify the boundary.<br>**
+
+Test cases for the boundary condition A + B > C:<br>
+TC7 (EC4): A=2, B=3, C=6 (sum of A and B is equal to C)<br>
+
+<br>
+
+
+**d) For the boundary condition A = C case (isosceles triangle), identify test cases to verify the boundary.<br>**
+
+Test cases for the boundary condition A = C:<br>
+TC8 (EC4): A=5, B=6, C=5 (A equals to C)<br>
+
+<br>
+
+**e) For the boundary condition A = B = C case (equilateral triangle), identify test cases to verify the boundary.<br>**
+
+Test cases for the boundary condition A = B = C:<br>
+TC9 (EC4): A=1, B=1, C=1 (all sides are equal)<br>
+
+<br>
+
+**f) For the boundary condition A2 + B2 = C2 case (right-angle triangle), identify test cases to verify the boundary.<br>**
+
+Test cases for the boundary condition A^2 + B^2 = C^2:<br>
+TC10 (EC4): A=3, B=4, C=5 (right-angled triangle)<br>
+
+<br>
+
+**g) For the non-triangle case, identify test cases to explore the boundary.<br>**
+
+Test cases for the non-triangle case:<br>
+TC11 (EC3): A=2, B=2, C=4 (sum of A and B is less than C)<br>
+
+<br>
+
+**h) For non-positive input, identify test points.<br>**
+
+Test points for non-positive input:<br>
+TP1 (EC2): A=0, B=4, C=5 (invalid input)<br>
+TP2 (EC2): A=-2, B=4, C=5 (invalid input)<br>
+Note: Test cases TC1 to TC10 covers all identified equivalence classes.<br>
