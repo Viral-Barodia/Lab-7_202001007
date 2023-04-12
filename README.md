@@ -188,3 +188,59 @@ return(ISOSCELES);
 return(SCALENE);
 
 }
+
+1. Equivalence Partitioning:
+
+Test case where all sides are equal, forming an equilateral triangle.
+Input: a = 5, b = 5, c = 5                                                          Output: EQUILATERAL
+
+Test case where two sides are equal, forming an isosceles triangle.
+Input: a = 4, b = 4, c = 5                                                          Output: ISOSCELES
+
+2. Boundary Values:
+
+Test case where all sides are minimum input values.
+Input: a = 1, b = 1, c = 1                                                           Output: EQUILATERAL
+
+Test case where two sides are minimum input values, and the third side is greater than the sum of the other two, forming an invalid triangle.
+Input: a = 1, b = 1, c = 3                                                           Output: INVALID
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Program 5
+Code:
+public static boolean prefix(String s1, String s2)
+{
+if (s1.length() > s2.length())
+{
+return false;
+}
+for (int i = 0; i < s1.length(); i++)
+{
+if (s1.charAt(i) != s2.charAt(i))
+{
+return false;
+}
+}
+return true;
+}
+
+1. Equivalence Partitioning:
+
+Test case where s1 is a prefix of s2.
+Input: s1 = "abc", s2 = "abcdef"
+Output: true
+
+Test case where s1 is not a prefix of s2.
+Input: s1 = "abc", s2 = "defgh"
+Output: false
+
+2. Boundary Values:
+
+Test case where s1 is equal to s2.
+Input: s1 = "hello", s2 = "hello"
+Output: true
+
+Test case where s1 is one character shorter than s2.
+Input: s1 = "hi", s2 = "hello"
+Output: false
