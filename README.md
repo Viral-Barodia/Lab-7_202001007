@@ -1,6 +1,6 @@
 ### Problem 0
 
-JAVA Program for determinding previous date:
+##### JAVA Program for determinding previous date:
 
 import java.time.LocalDate;
 
@@ -29,11 +29,11 @@ Inputs that are of type integer and within the valid range.
 Test cases for the same:
 Tester Action and Input Data                  Expected Outcome
 
-Equivalence Partitioning
+##### 1. Equivalence Partitioning
 32,11,2014                                      An Error message
 30,11,2014                                      Yes
 
-2. Boundary value Analysis
+##### 2. Boundary value Analysis
 a) Lower Bound:
 The minimum valid input value.
 
@@ -48,7 +48,7 @@ Boundary Value Analysis
 
 ### Program 1
 
-Code:
+##### Code:
 
 int linearSearch(int v, int a[])
 {
@@ -62,7 +62,7 @@ i++;
 return (-1);
 }
 
-1. Equivalence partitions:
+##### 1. Equivalence partitions:
 
 Valid input partition - an array of integers a and an integer v:
 a) a is empty
@@ -74,7 +74,7 @@ Output partition:
 a) v is found in the array
 b) v is not found in the array
 
-2. Boundary Value Analysis:
+##### 2. Boundary Value Analysis:
 
 For the given code, we can generate the following boundary value test cases:
 
@@ -109,7 +109,7 @@ count++;
 return (count);
 }
 
-1. Equivalence Partitioning:
+##### 1. Equivalence Partitioning:
 
 Test case where v is not present in the array a[].
 Input: v = 5, a[] = {1, 2, 3, 4, 6, 7, 8, 9}                            Output: 0
@@ -121,7 +121,7 @@ Test case where v is present multiple times in the array a[].
 Input: v = 5, a[] = {1, 2, 3, 4, 5, 5, 6, 7, 8, 5, 9}                   Output: 4
 
 
-2. Boundary Values:
+##### 2. Boundary Values:
 
 Test case with minimum input values.
 Input: v = 0, a[] = {}                                                  Output: 0
@@ -133,7 +133,7 @@ Input: v = 5, a[] = {5}                                                 Output: 
 
 ### Program 3
 
-Code:
+##### Code:
 
 int binarySearch(int v, int a[])
 {
@@ -154,7 +154,7 @@ lo = mid+1;
 return(-1);
 }
 
-1. Equivalence Partitioning:
+##### 1. Equivalence Partitioning:
 
 Test case where the value v is not present in the array a[].
 Input: v = 5, a[] = {1, 2, 3, 4, 6, 7, 8, 9}                                 Output: -1
@@ -162,7 +162,7 @@ Input: v = 5, a[] = {1, 2, 3, 4, 6, 7, 8, 9}                                 Out
 Test case where the value v is present at the beginning of the array a[].
 Input: v = 1, a[] = {1, 2, 3, 4, 6, 7, 8, 9}                                 Output: 0
 
-2. Boundary Values:
+##### 2. Boundary Values:
 
 Test case with minimum input values.
 Input: v = 5, a[] = {}                                                       Output: -1
@@ -174,7 +174,7 @@ Input: v = 5, a[] = {5}                                                      Out
 
 ### Program 4
 
-Code:
+##### Code:
 final int EQUILATERAL = 0;
 final int ISOSCELES = 1;
 final int SCALENE = 2;
@@ -191,7 +191,7 @@ return(SCALENE);
 
 }
 
-1. Equivalence Partitioning:
+##### 1. Equivalence Partitioning:
 
 Test case where all sides are equal, forming an equilateral triangle.
 Input: a = 5, b = 5, c = 5                                                          Output: EQUILATERAL
@@ -199,7 +199,7 @@ Input: a = 5, b = 5, c = 5                                                      
 Test case where two sides are equal, forming an isosceles triangle.
 Input: a = 4, b = 4, c = 5                                                          Output: ISOSCELES
 
-2. Boundary Values:
+##### 2. Boundary Values:
 
 Test case where all sides are minimum input values.
 Input: a = 1, b = 1, c = 1                                                           Output: EQUILATERAL
@@ -210,7 +210,8 @@ Input: a = 1, b = 1, c = 3                                                      
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Program 5
-Code:
+
+##### Code:
 public static boolean prefix(String s1, String s2)
 {
 if (s1.length() > s2.length())
@@ -227,7 +228,7 @@ return false;
 return true;
 }
 
-1. Equivalence Partitioning:
+##### 1. Equivalence Partitioning:
 
 Test case where s1 is a prefix of s2.
 Input: s1 = "abc", s2 = "abcdef"                                                     Output: true
@@ -235,7 +236,7 @@ Input: s1 = "abc", s2 = "abcdef"                                                
 Test case where s1 is not a prefix of s2.
 Input: s1 = "abc", s2 = "defgh"                                                      Output: false
 
-2. Boundary Values:
+##### 2. Boundary Values:
 
 Test case where s1 is equal to s2.
 Input: s1 = "hello", s2 = "hello"                                                   Output: true
@@ -255,7 +256,7 @@ Determine the following for the above program:<br>
 
 **a) Identify the equivalence classes for the system<br>**
 
-Equivalence Classes:<br>
+##### Equivalence Classes:<br>
 EC1: All sides are positive, real numbers.<br>
 EC2: One or more sides are negative or zero.<br>
 EC3: The sum of the lengths of any two sides is less than or equal to the length of the remaining side (impossible lengths).<br>
